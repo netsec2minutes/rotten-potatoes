@@ -21,7 +21,6 @@ jobs:
    needs: [CI]
    steps:
     - uses: actions/checkout@v2
-    - name: Kubernetes set context
     - uses: azure/k8s-actions/k8s-set-context@master
       with:
         kubeconfig: ${{ secrets.K8S_CONFIG }}
