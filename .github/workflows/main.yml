@@ -22,10 +22,9 @@ jobs:
    steps:
     - uses: actions/checkout@v2
     - name: Kubernetes set context
-      uses: Azure/k8s-set-context@v1.1
+    - uses: azure/k8s-actions/k8s-set-context@master
       with:
-        method: kubeconfig
-        kubeconfig: ${{ secrets.K8S_CONFIG.K8S_CONFIG }}
+        kubeconfig: ${{ secrets.K8S_CONFIG }}
     - name: Deploy Mongo
       uses: Azure/k8s-deploy@v1
       with:        
